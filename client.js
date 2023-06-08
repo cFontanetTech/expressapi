@@ -1,16 +1,20 @@
 const baseUrl = 'http://localhost:8080'
 
-export async function postPizza(){
+export async function postPizza() {
     const pizza = {
-        name:'carbonara'
+        name: 'carbonara'
     }
-    const response = await fetch(`${baseUrl}/pizzas`,{
-        method:'POST',
-        headers:{
+    const response = await fetch(`${baseUrl}/pizzas`, {
+        method: 'POST',
+        headers: {
             'content-type': 'application/json'
         },
-        body:JSON.stringify(pizza)
+        body: JSON.stringify(pizza)
     })
     const data = await response.json();
-    console.log(data)
+    const {status} = response;
+    console.log({
+        status,
+        data
+    })
 }
