@@ -1,8 +1,10 @@
-export  async function postPizza(){
+const baseUrl = 'http://localhost:8080'
+
+export async function postPizza(){
     const pizza = {
-        name:'carbonrar'
+        name:'carbonara'
     }
-    const response = await fetch('http://localhost:8080/pizzas',{
+    const response = await fetch(`${baseUrl}/pizzas`,{
         method:'POST',
         headers:{
             'content-type': 'application/json'
